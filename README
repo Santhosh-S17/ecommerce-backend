@@ -1,0 +1,146 @@
+# 🛒 E-Commerce Backend (Spring Boot)
+
+A scalable and secure **E-Commerce Backend API** built using Spring Boot.
+This project implements real-world backend features like authentication, role-based access, cart management, and order processing.
+
+---
+
+## 🚀 Features
+
+* 🔐 JWT Authentication & Authorization
+* 👥 Role-Based Access Control (USER / ADMIN)
+* 🛍️ Product Management (CRUD)
+* 🛒 Cart Functionality (Add, Update, Remove Items)
+* 📦 Order Placement & Order History
+* 🧾 DTO-based API design (clean and secure responses)
+* ⚡ RESTful APIs
+* 🧪 Swagger UI for API testing
+
+---
+
+## 🏗️ Tech Stack
+
+* **Backend:** Java, Spring Boot
+* **Database:** MySQL
+* **ORM:** Spring Data JPA (Hibernate)
+* **Security:** Spring Security + JWT
+* **Build Tool:** Maven
+* **API Testing:** Swagger / Postman
+
+---
+
+## 📂 Project Structure
+
+```
+com.santhosh.ecommercebackend
+│
+├── controller       # REST Controllers
+├── service          # Business Logic
+├── repository       # Database Access
+├── entity           # JPA Entities (DB Models)
+├── dto              # Data Transfer Objects
+├── security         # JWT & Authentication
+├── config           # Security Configuration
+└── exception        # Global Exception Handling
+```
+
+---
+
+## 🔐 Authentication Flow
+
+1. Register User → `/api/users/register`
+2. Login → `/api/auth/login`
+3. Receive JWT Token
+4. Use token in headers:
+
+```
+Authorization: Bearer <your_token>
+```
+
+---
+
+## 🧪 API Endpoints
+
+### 👤 User
+
+* `POST /api/users/register`
+
+### 🔐 Auth
+
+* `POST /api/auth/login`
+
+### 🛍️ Product
+
+* `POST /api/products` (ADMIN)
+* `GET /api/products`
+* `DELETE /api/products/{id}` (ADMIN)
+
+### 🛒 Cart
+
+* `POST /api/cart/add`
+* `PUT /api/cart/update`
+* `DELETE /api/cart/remove/{cartItemId}`
+
+### 📦 Order
+
+* `POST /api/orders`
+* `GET /api/orders/user/{userId}`
+
+---
+
+## 📊 Database Design
+
+Core Tables:
+
+* Users
+* Products
+* Cart & CartItems
+* Orders & OrderItems
+
+---
+
+## ⚙️ Setup Instructions
+
+### 1️⃣ Clone the repository
+
+```
+git clone https://github.com/your-username/ecommerce-backend.git
+```
+
+### 2️⃣ Configure Database
+
+Update `application.properties`:
+
+```
+spring.datasource.url=jdbc:mysql://localhost:3306/ecommerce_db
+spring.datasource.username=root
+spring.datasource.password=your_password
+```
+
+---
+
+### 3️⃣ Run the application
+
+```
+mvnw spring-boot:run
+```
+
+---
+
+### 4️⃣ Access Swagger UI
+
+```
+http://localhost:8080/swagger-ui/index.html
+```
+
+---
+
+## 👨‍💻 Author
+
+**Santhosh**
+
+---
+
+## ⭐ If you like this project
+
+Give it a ⭐ on GitHub and share it!
